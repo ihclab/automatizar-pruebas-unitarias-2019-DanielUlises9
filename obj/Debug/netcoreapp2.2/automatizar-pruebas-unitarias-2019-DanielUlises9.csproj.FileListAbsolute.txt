@@ -1,0 +1,11 @@
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.deps.json
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.runtimeconfig.json
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.runtimeconfig.dev.json
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.dll
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.pdb
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.csprojAssemblyReference.cache
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.csproj.CoreCompileInputs.cache
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.AssemblyInfoInputs.cache
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.AssemblyInfo.cs
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.dll
+C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.pdb
