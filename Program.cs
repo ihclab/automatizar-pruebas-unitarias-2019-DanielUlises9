@@ -5,6 +5,7 @@ namespace AutomatizarPruebasUnitarias {
 
     class Program {
         static void Main(string[] args) {
+            Medias mediasObj = new Medias();
             string[] lineas = File.ReadAllLines("CasosPrueba.txt");
             string[,] casos = new string[lineas.Length, 4];
             for (int i = 0; i < lineas.Length; i++) {
@@ -29,27 +30,68 @@ namespace AutomatizarPruebasUnitarias {
                                 }
                                 resultadoNuevo = Medias.mediaAritmetica(numeros);
                                 resultadoNuevo = Math.Round(resultadoNuevo, 4);
-                                if (resultadoNuevo == resultadoViejo)
-                                    Console.WriteLine("Exito");
-                                else {
-                                    Console.WriteLine("Fallo");
+                                if (resultadoNuevo == resultadoViejo) {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                            + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
+                                } else {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                                    + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
                                 }
                                 break;
                             case "mediaGeometrica":
-                                Console.WriteLine("Es mediaAritmetica");
+                                foreach (var item in lineaNumeros) {
+                                    numeros[cresco] = Convert.ToInt32(item);
+                                    cresco++;
+                                }
+                                resultadoNuevo = mediasObj.mediaGeometrica(numeros);
+                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
+                                if (resultadoNuevo == resultadoViejo) {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                            + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
+                                } else {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                                    + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
+                                }
                                 break;
                             case "mediaArmonica":
-                                Console.WriteLine("Es mediaAritmetica");
+                                foreach (var item in lineaNumeros) {
+                                    numeros[cresco] = Convert.ToInt32(item);
+                                    cresco++;
+                                }
+                                resultadoNuevo = Medias.mediaArmonica(numeros);
+                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
+                                if (resultadoNuevo == resultadoViejo) {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                            + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
+                                } else {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
+                                    + "Resultado Nuevo: " + resultadoNuevo);
+                                    Console.ResetColor();
+                                }
                                 break;
                             case "mediaNoExiste":
-                                Console.WriteLine("Es mediaAritmetica");
                                 break;
                         }
                     } else {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("No hay valores , NULL");
+                        Console.ResetColor();
                     }
                 } catch (Exception ex) {
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine(ex);
+                    Console.ResetColor();
                 }
             }
         }
