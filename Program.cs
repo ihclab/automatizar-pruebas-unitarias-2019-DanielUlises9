@@ -13,8 +13,9 @@ namespace AutomatizarPruebasUnitarias {
                     casos[i, j] = linea[j];
                     System.Console.WriteLine(casos[i, j]);
                 }
-                Console.WriteLine(linea[1]);
                 int cresco = 0;
+                //double prueba = 2.222222222d;
+                double resultadoNuevo;
                 double resultadoViejo = Convert.ToDouble(linea[3]);
                 string[] lineaNumeros = linea[2].Split(' ');
                 int[] numeros = new int[lineaNumeros.Length];
@@ -24,7 +25,13 @@ namespace AutomatizarPruebasUnitarias {
                             numeros[cresco] = Convert.ToInt32(item);
                             cresco++;
                         }
-                        Console.WriteLine("Es mediaAritmetica");
+                        resultadoNuevo = Medias.mediaAritmetica(numeros);
+                        resultadoNuevo = Math.Round(resultadoNuevo, 4);
+                        if (resultadoNuevo == resultadoViejo)
+                            Console.WriteLine("Exito");
+                        else {
+                            Console.WriteLine("Fallo");
+                        }
                         break;
                     case "mediaGeometrica":
                         Console.WriteLine("Es mediaAritmetica");
