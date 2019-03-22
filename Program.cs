@@ -13,39 +13,43 @@ namespace AutomatizarPruebasUnitarias {
                     casos[i, j] = linea[j];
                     System.Console.WriteLine(casos[i, j]);
                 }
-                if (linea[2] != "NULL") {
-                    int cresco = 0;
-                    //double prueba = 2.222222222d;
-                    double resultadoNuevo;
-                    double resultadoViejo = Convert.ToDouble(linea[3]);
-                    string[] lineaNumeros = linea[2].Split(' ');
-                    int[] numeros = new int[lineaNumeros.Length];
-                    switch (linea[1]) {
-                        case "mediaAritmetica":
-                            foreach (var item in lineaNumeros) {
-                                numeros[cresco] = Convert.ToInt32(item);
-                                cresco++;
-                            }
-                            resultadoNuevo = Medias.mediaAritmetica(numeros);
-                            resultadoNuevo = Math.Round(resultadoNuevo, 4);
-                            if (resultadoNuevo == resultadoViejo)
-                                Console.WriteLine("Exito");
-                            else {
-                                Console.WriteLine("Fallo");
-                            }
-                            break;
-                        case "mediaGeometrica":
-                            Console.WriteLine("Es mediaAritmetica");
-                            break;
-                        case "mediaArmonica":
-                            Console.WriteLine("Es mediaAritmetica");
-                            break;
-                        case "mediaNoExiste":
-                            Console.WriteLine("Es mediaAritmetica");
-                            break;
+                try {
+                    if (linea[2] != "NULL") {
+                        int cresco = 0;
+                        //double prueba = 2.222222222d;
+                        double resultadoNuevo;
+                        double resultadoViejo = Convert.ToDouble(linea[3]);
+                        string[] lineaNumeros = linea[2].Split(' ');
+                        int[] numeros = new int[lineaNumeros.Length];
+                        switch (linea[1]) {
+                            case "mediaAritmetica":
+                                foreach (var item in lineaNumeros) {
+                                    numeros[cresco] = Convert.ToInt32(item);
+                                    cresco++;
+                                }
+                                resultadoNuevo = Medias.mediaAritmetica(numeros);
+                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
+                                if (resultadoNuevo == resultadoViejo)
+                                    Console.WriteLine("Exito");
+                                else {
+                                    Console.WriteLine("Fallo");
+                                }
+                                break;
+                            case "mediaGeometrica":
+                                Console.WriteLine("Es mediaAritmetica");
+                                break;
+                            case "mediaArmonica":
+                                Console.WriteLine("Es mediaAritmetica");
+                                break;
+                            case "mediaNoExiste":
+                                Console.WriteLine("Es mediaAritmetica");
+                                break;
+                        }
+                    } else {
+                        Console.WriteLine("No hay valores , NULL");
                     }
-                } else {
-                    Console.WriteLine("No hay valores , NULL");
+                } catch (Exception ex) {
+                    Console.WriteLine(ex);
                 }
             }
         }
