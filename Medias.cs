@@ -16,7 +16,7 @@ namespace AutomatizarPruebasUnitarias {
             for (int i = 0; i < vals.Length; i++) {
                 sum += vals[i];
             }
-            return sum / vals.Length;
+            return (double)sum / vals.Length;
         }
 
         /**
@@ -34,7 +34,7 @@ namespace AutomatizarPruebasUnitarias {
             for (int i = 0; i < vals.Length; i++) {
                 mult *= vals[i];
             }
-            return raizEnesima(mult, vals.Length);
+            return (double)raizEnesima(mult, vals.Length);
         }
 
         /**
@@ -43,8 +43,9 @@ namespace AutomatizarPruebasUnitarias {
         public static double mediaArmonica(params int[] vals) {
             double sum = 0;
             for (int i = 0; i < vals.Length; i++) {
-                sum += 1 / vals[i];
+                sum = sum + (1d / Convert.ToDouble(vals[i]));
             }
+            double hola = vals.Length / sum;
             return vals.Length / sum;
         }
     }

@@ -1,10 +1,38 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 namespace AutomatizarPruebasUnitarias {
-
     class Program {
+        static double truncate(double d, int decimals) {
+            return (Math.Truncate(d * Math.Pow(10, decimals)) / Math.Pow(10, decimals));
+        }
+        static void elTruncador(double nuevo, double viejo) {
+            nuevo = truncate(nuevo, 4);
+            viejo = truncate(viejo, 4);
+            exitoOfalla(nuevo, viejo);
+        }
+        static void milisecondsP(long reb) {
+            Console.WriteLine("Milisegundos: " + Convert.ToDouble(reb) / 10000d);
+        }
+
+        static void exitoOfalla(double nuevo, double viejo) {
+            if (nuevo == viejo) {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Exito \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+        + "Resultado Nuevo: " + nuevo);
+                Console.ResetColor();
+            } else {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+                + "Resultado Nuevo: " + nuevo);
+                Console.ResetColor();
+            }
+        }
         static void Main(string[] args) {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            watch.Stop();
+            watch.Reset();
             Medias mediasObj = new Medias();
             string[] lineas = File.ReadAllLines("CasosPrueba.txt");
             string[,] casos = new string[lineas.Length, 4];
@@ -18,69 +46,52 @@ namespace AutomatizarPruebasUnitarias {
                     if (linea[2] != "NULL") {
                         int cresco = 0;
                         //double prueba = 2.222222222d;
-                        double resultadoNuevo;
                         double resultadoViejo = Convert.ToDouble(linea[3]);
                         string[] lineaNumeros = linea[2].Split(' ');
                         int[] numeros = new int[lineaNumeros.Length];
                         switch (linea[1]) {
                             case "mediaAritmetica":
+                                watch.Start();
                                 foreach (var item in lineaNumeros) {
                                     numeros[cresco] = Convert.ToInt32(item);
                                     cresco++;
                                 }
-                                resultadoNuevo = Medias.mediaAritmetica(numeros);
-                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
-                                if (resultadoNuevo == resultadoViejo) {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                            + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                } else {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                                    + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                }
+                                elTruncador(Medias.mediaAritmetica(numeros), resultadoViejo);
+                                //resultadoNuevo = Math.Round(resultadoNuevo, 4);
+                                watch.Stop();
+                                milisecondsP(watch.ElapsedTicks);
+                                watch.Reset();
+                                Console.WriteLine("------------------");
                                 break;
                             case "mediaGeometrica":
+                                watch.Start();
                                 foreach (var item in lineaNumeros) {
                                     numeros[cresco] = Convert.ToInt32(item);
                                     cresco++;
                                 }
-                                resultadoNuevo = mediasObj.mediaGeometrica(numeros);
-                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
-                                if (resultadoNuevo == resultadoViejo) {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                            + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                } else {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                                    + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                }
+                                elTruncador(mediasObj.mediaGeometrica(numeros), resultadoViejo);
+                                watch.Stop();
+                                milisecondsP(watch.ElapsedTicks);
+                                watch.Reset();
+                                Console.WriteLine("------------------");
                                 break;
                             case "mediaArmonica":
+                                watch.Start();
                                 foreach (var item in lineaNumeros) {
                                     numeros[cresco] = Convert.ToInt32(item);
                                     cresco++;
                                 }
-                                resultadoNuevo = Medias.mediaArmonica(numeros);
-                                resultadoNuevo = Math.Round(resultadoNuevo, 4);
-                                if (resultadoNuevo == resultadoViejo) {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("Exito \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                            + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                } else {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + resultadoViejo + "\n\r VS \n\r"
-                                    + "Resultado Nuevo: " + resultadoNuevo);
-                                    Console.ResetColor();
-                                }
+                                elTruncador(Medias.mediaArmonica(numeros), resultadoViejo);
+                                watch.Stop();
+                                milisecondsP(watch.ElapsedTicks);
+                                watch.Reset();
+                                Console.WriteLine("------------------");
                                 break;
                             case "mediaNoExiste":
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                                Console.WriteLine("La media no existe");
+                                Console.ResetColor();
+                                Console.WriteLine("------------------");
                                 break;
                         }
                     } else {
@@ -94,6 +105,7 @@ namespace AutomatizarPruebasUnitarias {
                     Console.ResetColor();
                 }
             }
+
         }
     }
 }
