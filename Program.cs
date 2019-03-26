@@ -15,7 +15,15 @@ namespace AutomatizarPruebasUnitarias {
         static void milisecondsP(long reb) {
             Console.WriteLine("Milisegundos: " + Convert.ToDouble(reb) / 10000d);
         }
-
+        static int[] ConvertirNumeros(string[] vec, int size) {
+            int[] numeros = new int[size];
+            int cresco = 0;
+            foreach (var item in vec) {
+                numeros[cresco] = Convert.ToInt32(item);
+                cresco++;
+            }
+            return numeros;
+        }
         static void exitoOfalla(double nuevo, double viejo) {
             if (nuevo == viejo) {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -29,6 +37,7 @@ namespace AutomatizarPruebasUnitarias {
                 Console.ResetColor();
             }
         }
+
         static void Main(string[] args) {
             var watch = System.Diagnostics.Stopwatch.StartNew();
             watch.Stop();
@@ -44,19 +53,13 @@ namespace AutomatizarPruebasUnitarias {
                 }
                 try {
                     if (linea[2] != "NULL") {
-                        int cresco = 0;
                         //double prueba = 2.222222222d;
                         double resultadoViejo = Convert.ToDouble(linea[3]);
                         string[] lineaNumeros = linea[2].Split(' ');
-                        int[] numeros = new int[lineaNumeros.Length];
                         switch (linea[1]) {
                             case "mediaAritmetica":
                                 watch.Start();
-                                foreach (var item in lineaNumeros) {
-                                    numeros[cresco] = Convert.ToInt32(item);
-                                    cresco++;
-                                }
-                                elTruncador(Medias.mediaAritmetica(numeros), resultadoViejo);
+                                elTruncador(Medias.mediaAritmetica(ConvertirNumeros(lineaNumeros, lineaNumeros.Length)), resultadoViejo);
                                 //resultadoNuevo = Math.Round(resultadoNuevo, 4);
                                 watch.Stop();
                                 milisecondsP(watch.ElapsedTicks);
@@ -65,11 +68,7 @@ namespace AutomatizarPruebasUnitarias {
                                 break;
                             case "mediaGeometrica":
                                 watch.Start();
-                                foreach (var item in lineaNumeros) {
-                                    numeros[cresco] = Convert.ToInt32(item);
-                                    cresco++;
-                                }
-                                elTruncador(mediasObj.mediaGeometrica(numeros), resultadoViejo);
+                                elTruncador(mediasObj.mediaGeometrica(ConvertirNumeros(lineaNumeros, lineaNumeros.Length)), resultadoViejo);
                                 watch.Stop();
                                 milisecondsP(watch.ElapsedTicks);
                                 watch.Reset();
@@ -77,11 +76,7 @@ namespace AutomatizarPruebasUnitarias {
                                 break;
                             case "mediaArmonica":
                                 watch.Start();
-                                foreach (var item in lineaNumeros) {
-                                    numeros[cresco] = Convert.ToInt32(item);
-                                    cresco++;
-                                }
-                                elTruncador(Medias.mediaArmonica(numeros), resultadoViejo);
+                                elTruncador(Medias.mediaArmonica(ConvertirNumeros(lineaNumeros, lineaNumeros.Length)), resultadoViejo);
                                 watch.Stop();
                                 milisecondsP(watch.ElapsedTicks);
                                 watch.Reset();
