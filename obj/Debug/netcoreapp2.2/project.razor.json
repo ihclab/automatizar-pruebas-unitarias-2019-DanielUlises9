@@ -1,6 +1,14 @@
 {
-  "ProjectFilePath": "c:\\Users\\danie\\Desktop\\automatizar-pruebas-unitarias-2019-DanielUlises9\\automatizar-pruebas-unitarias-2019-DanielUlises9.csproj",
+  "ProjectFilePath": "d:\\automatizar-pruebas-unitarias-2019-DanielUlises9\\automatizar-pruebas-unitarias-2019-DanielUlises9.csproj",
   "TargetFramework": "netcoreapp2.2",
   "TagHelpers": [],
-  "Configuration": null
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
 }

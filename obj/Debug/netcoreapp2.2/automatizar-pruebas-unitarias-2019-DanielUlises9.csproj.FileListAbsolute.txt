@@ -9,3 +9,14 @@ C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Deb
 C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.AssemblyInfo.cs
 C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.dll
 C:\Users\Indiana\Tareas\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.pdb
+D:\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.deps.json
+D:\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.runtimeconfig.json
+D:\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.runtimeconfig.dev.json
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.dll
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\bin\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.pdb
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.csprojAssemblyReference.cache
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.csproj.CoreCompileInputs.cache
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.AssemblyInfoInputs.cache
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.AssemblyInfo.cs
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.dll
+d:\automatizar-pruebas-unitarias-2019-DanielUlises9\obj\Debug\netcoreapp2.2\automatizar-pruebas-unitarias-2019-DanielUlises9.pdb

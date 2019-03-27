@@ -23,6 +23,7 @@ namespace AutomatizarPruebasUnitarias {
                 cresco++;
             }
             return numeros;
+
         }
         static void exitoOfalla(double nuevo, double viejo) {
             if (nuevo == viejo) {
