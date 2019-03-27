@@ -4,6 +4,8 @@ using System.Threading;
 
 namespace AutomatizarPruebasUnitarias {
     class Program {
+        static string data;
+        static string myPath =Directory.GetCurrentDirectory();
         static double truncate(double d, int decimals) {
             return (Math.Truncate(d * Math.Pow(10, decimals)) / Math.Pow(10, decimals));
         }
@@ -23,7 +25,6 @@ namespace AutomatizarPruebasUnitarias {
                 cresco++;
             }
             return numeros;
-
         }
         static void exitoOfalla(double nuevo, double viejo) {
             if (nuevo == viejo) {
@@ -31,12 +32,19 @@ namespace AutomatizarPruebasUnitarias {
                 Console.WriteLine("Exito \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
         + "Resultado Nuevo: " + nuevo);
                 Console.ResetColor();
+                data+="Exito \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+        + "Resultado Nuevo: " + nuevo + "\n\r";
             } else {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
                 + "Resultado Nuevo: " + nuevo);
                 Console.ResetColor();
+                data+="Fallo \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+                + "Resultado Nuevo: " + nuevo + "\n\r";
             }
+        }
+        static void crearArchivo(string datos){
+            System.IO.File.WriteAllText(myPath + "'\\'ResultadosDePruebas.txt",datos);
         }
 
         static void Main(string[] args) {
@@ -51,6 +59,7 @@ namespace AutomatizarPruebasUnitarias {
                 for (int j = 0; j < linea.Length; j++) {
                     casos[i, j] = linea[j];
                     System.Console.WriteLine(casos[i, j]);
+                    data += casos[i,j] + ":";
                 }
                 try {
                     if (linea[2] != "NULL") {
@@ -101,7 +110,7 @@ namespace AutomatizarPruebasUnitarias {
                     Console.ResetColor();
                 }
             }
-
-        }
+            crearArchivo(data);
+        }        
     }
 }
