@@ -1,0 +1,44 @@
+0001:mediaAritmetica:2 4 8:4.6666:Exito 
+Resultado viejo: 4.6666
+ VS 
+Resultado Nuevo: 4.6666
+0002:mediaAritmetica:1 5:3.0000:Exito 
+Resultado viejo: 3
+ VS 
+Resultado Nuevo: 3
+0003:mediaAritmetica:1 2 4 8 16 32:10.5000:Exito 
+Resultado viejo: 10.5
+ VS 
+Resultado Nuevo: 10.5
+0004:mediaGeometrica:1 2 4 8 16 32:6.6569:Fallo 
+Resultado viejo: 6.6569
+ VS 
+Resultado Nuevo: 5.6568
+0005:mediaGeometrica:0:0.0000:Exito 
+Resultado viejo: 0
+ VS 
+Resultado Nuevo: 0
+0006:mediaGeometrica:2 4 8:4.0000:Fallo 
+Resultado viejo: 4
+ VS 
+Resultado Nuevo: 3.9999
+0007:mediaArmonica:2 4 8:3.4286:Fallo 
+Resultado viejo: 3.4286
+ VS 
+Resultado Nuevo: 3.4285
+0008:mediaArmonica:2 3 6:3.0000:Exito 
+Resultado viejo: 3
+ VS 
+Resultado Nuevo: 3
+0009:mediaAritmetica:5 6:0.0000:Fallo 
+Resultado viejo: 0
+ VS 
+Resultado Nuevo: 5.5
+0010:mediaGeometrica:0 0 0 0:Exception:
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ParseDouble(ReadOnlySpan`1 value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDouble(String value)
+   at AutomatizarPruebasUnitarias.Program.Main(String[] args) in D:\automatizar-pruebas-unitarias-2019-DanielUlises9\Program.cs:line 67
+0011:mediaAritmetica:NULL:0.0000:No hay valores, NULL
+0012:mediaGeometrica:NULL:0.0000:No hay valores, NULL
+0013:mediaNoExiste:2 3 6:3.0320:

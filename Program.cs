@@ -29,22 +29,22 @@ namespace AutomatizarPruebasUnitarias {
         static void exitoOfalla(double nuevo, double viejo) {
             if (nuevo == viejo) {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Exito \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+                Console.WriteLine("Exito \r\n" + "Resultado viejo: " + viejo + "\r\n VS \r\n"
         + "Resultado Nuevo: " + nuevo);
                 Console.ResetColor();
-                data+="Exito \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
-        + "Resultado Nuevo: " + nuevo + "\n\r";
+                data+="Exito \r\n" + "Resultado viejo: " + viejo + "\r\n VS \r\n"
+        + "Resultado Nuevo: " + nuevo + "\r\n";
             } else {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Fallo \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
+                Console.WriteLine("Fallo \r\n" + "Resultado viejo: " + viejo + "\r\n VS \r\n"
                 + "Resultado Nuevo: " + nuevo);
                 Console.ResetColor();
-                data+="Fallo \n\r" + "Resultado viejo: " + viejo + "\n\r VS \n\r"
-                + "Resultado Nuevo: " + nuevo + "\n\r";
+                data+="Fallo \r\n" + "Resultado viejo: " + viejo + "\r\n VS \r\n"
+                + "Resultado Nuevo: " + nuevo + "\r\n";
             }
         }
         static void crearArchivo(string datos){
-            System.IO.File.WriteAllText(myPath + "'\\'ResultadosDePruebas.txt",datos);
+            System.IO.File.WriteAllText("ResultadosDePruebas.txt",datos);
         }
 
         static void Main(string[] args) {
@@ -103,11 +103,13 @@ namespace AutomatizarPruebasUnitarias {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("No hay valores , NULL");
                         Console.ResetColor();
+                        data += "No hay valores, NULL\r\n";
                     }
                 } catch (Exception ex) {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine(ex);
                     Console.ResetColor();
+                    data+="\r\n" + ex + "\r\n";
                 }
             }
             crearArchivo(data);
