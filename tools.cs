@@ -47,9 +47,12 @@ namespace AutomatizarPruebasUnitarias {
         }
         public static void crearArchivo(string datos){
             System.IO.File.WriteAllText("ResultadosDePruebas.txt",datos);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Archivo Creado Exitosamente");
+            Console.ResetColor();
         }
 
-        public static void escojerCual(string data,string [] vector){
+        public static void escojerCual(string [] vector){
             var watch = System.Diagnostics.Stopwatch.StartNew();
             watch.Stop();
             watch.Reset();
@@ -114,7 +117,7 @@ namespace AutomatizarPruebasUnitarias {
                     System.Console.WriteLine(casos[i, j]);
                     data += casos[i,j] + ":";
                 }
-                tools.escojerCual("",linea);
+                tools.escojerCual(linea);
         }
     }
 
